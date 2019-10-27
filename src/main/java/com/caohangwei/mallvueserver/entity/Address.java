@@ -1,8 +1,6 @@
 package com.caohangwei.mallvueserver.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 /**
@@ -13,7 +11,7 @@ import lombok.Data;
 public class Address {
 
     @TableId(value = "address_id")
-    private int address_id;
+    private Integer addressId;
 
     // 姓名
     @TableField(value = "name")
@@ -44,5 +42,8 @@ public class Address {
     private String postalcode;
 
     @TableField(value = "user_id")
-    private int userid;
+    private Integer userid;
+
+    @TableLogic
+    private Integer deleted;
 }

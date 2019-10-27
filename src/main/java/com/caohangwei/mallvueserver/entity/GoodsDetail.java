@@ -28,4 +28,7 @@ public class GoodsDetail {
     // 商品详细信息的 Value
     @TableField(value = "detail_value")
     private String detailValue;
+
+    @TableField(value = "goods_id")
+    private int goodsId;
 }

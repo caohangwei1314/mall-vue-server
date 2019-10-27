@@ -38,4 +38,7 @@ public class GoodsAttr {
     // 该配置商品是否已上架
     @TableField(value = "on_sale")
     private Boolean onSale;
+
+    @TableField(value = "goods_id")
+    private int goodsId;
 }

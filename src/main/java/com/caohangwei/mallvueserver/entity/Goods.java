@@ -41,4 +41,12 @@ public class Goods {
     // 库存总数
     @TableField("sku_num")
     private int skuNum;
+
+    // 分类id
+    @TableField("goods_cat_id")
+    private int goodsCatId;
+
+    // 分类id
+    @TableField("merchant_id")
+    private int merchantId;
 }

@@ -38,9 +38,15 @@ public class OrderDetail {
 
     // 商家ID
     @TableField(value = "merchant_id")
-    private String merchantId;
+    private int merchantId;
 
     // 购买数量
     @TableField(value = "count")
     private int count;
+
+    @TableField(value = "goods_id")
+    private int goodsId;
+
+    @TableField(value = "order_id")
+    private int orderId;
 }

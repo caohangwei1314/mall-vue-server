@@ -2,6 +2,7 @@ package com.caohangwei.mallvueserver.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -45,4 +46,7 @@ public class ShoppingCart {
     // 商品code
     @TableField(value = "goods_code")
     private String goodsCode;
+
+    @TableLogic
+    private Integer deleted;
 }

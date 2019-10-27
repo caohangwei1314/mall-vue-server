@@ -4,19 +4,22 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @author PinuoC
  */
 @Data
-@TableName(value = "order")
+@Accessors(chain = true)
+@TableName(value = "orders")
 public class Order {
 
     // 唯一标识 ID
     @TableId(value = "order_id")
-    private int orderid;
+    private Integer orderid;
 
     // 姓名
     @TableField(value = "name")
