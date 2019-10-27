@@ -1,9 +1,13 @@
-package com.caohangwei.mallvueserver.enity;
+package com.caohangwei.mallvueserver.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.caohangwei.mallvueserver.util.SignUtils;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import java.util.Date;
 
@@ -11,13 +15,16 @@ import java.util.Date;
  * @author PinuoC
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors(chain = true)
 @TableName(value = "user")
 public class User {
 
-    @TableId(value = "id")
+    @TableId(value = "user_id")
     private int userid; // 用户id
 
-    @TableField(value = "username")
+    @TableField(value = "user_name")
     private String username; // 用户名
 
     @TableField(value = "password")

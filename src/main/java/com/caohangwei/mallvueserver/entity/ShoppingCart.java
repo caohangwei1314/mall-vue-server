@@ -1,9 +1,11 @@
-package com.caohangwei.mallvueserver.enity;
+package com.caohangwei.mallvueserver.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+
+import java.math.BigDecimal;
 
 /**
  * @author PinuoC
@@ -30,7 +32,7 @@ public class ShoppingCart {
     private int attrId;
     // 商品价格
     @TableField(value = "price")
-    private double price;
+    private BigDecimal price;
     // 商品个数
     @TableField(value = "count")
     private int count;

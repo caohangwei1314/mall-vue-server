@@ -1,11 +1,15 @@
-package com.caohangwei.mallvueserver.enity;
+package com.caohangwei.mallvueserver.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 /**
+ * 商品套餐
+ *
  * @author PinuoC
  */
 @Data
@@ -29,7 +33,7 @@ public class GoodsAttr {
 
     // 该配置商品价格
     @TableField(value = "attr_price")
-    private double attrPrice;
+    private BigDecimal attrPrice;
 
     // 该配置商品是否已上架
     @TableField(value = "on_sale")

@@ -1,10 +1,11 @@
-package com.caohangwei.mallvueserver.enity;
+package com.caohangwei.mallvueserver.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -24,7 +25,7 @@ public class SecondKill {
 
     // 秒杀价格
     @TableField("sk_price")
-    private double skPrice;
+    private BigDecimal skPrice;
 
     // 秒杀结束时间
     @TableField("ended_at")

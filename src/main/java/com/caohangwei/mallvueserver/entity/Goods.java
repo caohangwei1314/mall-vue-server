@@ -1,9 +1,11 @@
-package com.caohangwei.mallvueserver.enity;
+package com.caohangwei.mallvueserver.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+
+import java.math.BigDecimal;
 
 /**
  * @author PinuoC
@@ -30,7 +32,7 @@ public class Goods {
 
     // 基础价格，套餐价格在此基础上变化
     @TableField("basic_price")
-    private double basicPrice;
+    private BigDecimal basicPrice;
 
     // 商品销售总数
     @TableField("sales_num")

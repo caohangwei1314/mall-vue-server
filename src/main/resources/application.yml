@@ -1,0 +1,8 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://115.159.90.137:3306/mall-vue?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: wangliming45
