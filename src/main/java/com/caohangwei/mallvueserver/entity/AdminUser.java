@@ -14,8 +14,8 @@ import java.util.Date;
 @TableName(value = "admin_user")
 public class AdminUser {
 
-    @TableId(value = "id")
-    private int id;
+    @TableId(value = "user_id")
+    private int userid;
 
     @TableField(value = "user_name")
     private String username;
@@ -29,9 +29,12 @@ public class AdminUser {
     @TableField(value = "email")
     private String email;
 
-    @TableField(value = "created_at")
+    @TableField(value = "create_at")
     private Date createdAt;
 
     @TableField(value = "updated_at")
     private Date updatedAt;
+
+    @TableField(value = "merchant_id")
+    private Integer merchantId;
 }

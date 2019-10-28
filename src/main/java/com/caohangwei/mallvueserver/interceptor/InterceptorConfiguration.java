@@ -14,7 +14,7 @@ public class InterceptorConfiguration  extends WebMvcConfigurerAdapter {
         // 配置拦截的路径
         ir.addPathPatterns("/**");
         // 配置不拦截的路径
-        ir.excludePathPatterns("/user/login");
+        ir.excludePathPatterns("/*/login");
         ir.excludePathPatterns("/user/regist");
         ir.excludePathPatterns("/*/list");
         ir.excludePathPatterns("/*/detail/*");

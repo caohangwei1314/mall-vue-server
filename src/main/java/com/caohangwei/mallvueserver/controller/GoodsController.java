@@ -1,6 +1,7 @@
 package com.caohangwei.mallvueserver.controller;
 
 import com.caohangwei.mallvueserver.base.BaseResponse;
+import com.caohangwei.mallvueserver.request.GoodsListRequest;
 import com.caohangwei.mallvueserver.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,11 @@ public class GoodsController {
                                   @RequestParam(value = "page",required = false) Integer page,
                                   @RequestParam(value = "pageSize",required = false) Integer pageSize){
         return BaseResponse.createSuccess(goodsService.goodsList(goodsName,merchantId,page,pageSize));
+    }
+
+    @PostMapping("/admin/list")
+    public BaseResponse goodsList(@RequestBody GoodsListRequest goodsListRequest){
+        return BaseResponse.createSuccess(goodsService.goodsList(goodsListRequest));
     }
 
     @GetMapping("/detail/{goodsId}")

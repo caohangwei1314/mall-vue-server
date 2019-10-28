@@ -8,9 +8,11 @@ import com.caohangwei.mallvueserver.entity.*;
 import com.caohangwei.mallvueserver.exception.LoginException;
 import com.caohangwei.mallvueserver.exception.QueryException;
 import com.caohangwei.mallvueserver.mapper.GoodsMapper;
+import com.caohangwei.mallvueserver.request.GoodsListRequest;
 import com.caohangwei.mallvueserver.response.GoodsListResponse;
 import com.caohangwei.mallvueserver.response.GoodsResponse;
 import com.caohangwei.mallvueserver.service.*;
+import com.caohangwei.mallvueserver.util.UserContextHolder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +43,9 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
 
     @Autowired
     private GoodsCommentService goodsCommentService;
+
+    @Autowired
+    private AdminUserService adminUserService;
 
     @Override
     public GoodsListResponse goodsList(String goodsName, Integer merchantId, Integer page, Integer pageSize) {
@@ -73,6 +78,16 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
                 .goodsSum((int) goodsIPage.getTotal())
                 .build();
         return goodsListResponse;
+    }
+
+    @Override
+    public GoodsListResponse goodsList(GoodsListRequest goodsListRequest){
+        User user = UserContextHolder.getUser();
+        AdminUser adminUser = adminUserService
+                .lambdaQuery()
+                .eq(AdminUser::getUserid,user.getUserid())
+                .one();
+        return goodsList(goodsListRequest.getName(),adminUser.getMerchantId(),goodsListRequest.getPage(),goodsListRequest.getLimit());
     }
 
     @Override
